@@ -39,6 +39,7 @@
         max-width: 700px;
         width: 100%;
         padding: 2.5rem 2rem;
+        margin: auto;
       }
 
       .artikel-title {
@@ -68,7 +69,10 @@
       .artikel-img {
         display: block;
         margin: 1.5rem auto;
-        max-height: 320px;
+        width: 45%;
+        max-width: 500px;
+        max-height: 350px;
+        object-fit: contain;
         border-radius: 1rem;
         border: 2px solid var(--c1);
         box-shadow: 0 4px 24px rgba(111, 230, 252, 0.15);
@@ -115,25 +119,29 @@
     </style>
   </head>
   <body>
-    <div class="artikel-card">
-      <h1 class="artikel-title" id="judul-artikel">Memuat judul...</h1>
-      <div class="artikel-meta">
-        <span id="tanggal-artikel">Memuat tanggal...</span> &bull;
-        <span id="kategori-artikel">...</span>
+    <div class="container d-flex justify-content-center align-items-start py-5">
+      <div class="artikel-card">
+        <h1 class="artikel-title" id="judul-artikel">Memuat judul...</h1>
+        <div class="artikel-meta">
+          <span id="tanggal-artikel">Memuat tanggal...</span> &bull;
+          <span id="kategori-artikel">...</span>
+        </div>
+        <div class="artikel-author" id="penulis-artikel">Penulis: -</div>
+        <img
+          id="gambar-artikel"
+          class="artikel-img"
+          style="display: none"
+          alt="Gambar Artikel"
+        />
+        <div class="artikel-content" id="konten-artikel">
+          Memuat konten artikel...
+        </div>
+        <div class="text-center">
+          <a href="dashboard.html" class="btn-back"
+            ><i class="bi bi-arrow-left"></i>Kembali</a
+          >
+        </div>
       </div>
-      <div class="artikel-author" id="penulis-artikel">Penulis: -</div>
-      <img
-        id="gambar-artikel"
-        class="artikel-img"
-        style="display: none"
-        alt="Gambar Artikel"
-      />
-      <div class="artikel-content" id="konten-artikel">
-        Memuat konten artikel...
-      </div>
-      <a href="dashboard.html" class="btn-back"
-        ><i class="bi bi-arrow-left"></i>Kembali</a
-      >
     </div>
 
     <script>
