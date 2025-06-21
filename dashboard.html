@@ -177,7 +177,7 @@
           document.querySelectorAll(".detail-btn").forEach((btn) => {
             btn.addEventListener("click", () => {
               const id = btn.getAttribute("data-id");
-              getDetailArtikel(id);
+              window.location.href = "detail.html?id=" + id;
             });
           });
 
