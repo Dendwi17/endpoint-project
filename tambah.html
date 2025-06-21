@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,137 +13,129 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      body {
+        background: linear-gradient(135deg, #7e02d1, #d605c1);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
 
-<style>
-  body {
-    background: linear-gradient(135deg, #7e02d1, #d605c1);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
+      .tambah-card {
+        background: #ffffff;
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 40px rgba(0, 195, 255, 0.15);
+        border: none;
+        padding: 2.5rem 2rem;
+        max-width: 650px;
+        margin: auto;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+      }
 
-  .tambah-card {
-    background: #ffffff;
-    border-radius: 1.5rem;
-    box-shadow: 0 10px 40px rgba(0, 195, 255, 0.15);
-    border: none;
-    padding: 2.5rem 2rem;
-    max-width: 650px;
-    margin: auto;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-  }
+      .tambah-card::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 40px;
+        width: 90px;
+        height: 8px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #7e02d1, #7e02d1);
+        opacity: 0.8;
+      }
 
-  .tambah-card::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    left: 40px;
-    width: 90px;
-    height: 8px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #7e02d1, #7e02d1);
-    opacity: 0.8;
-  }
+      h1 {
+        color: #0277bd;
+        font-weight: 800;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
 
-  h1 {
-    color: #0277bd;
-    font-weight: 800;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
+      label {
+        font-weight: 600;
+        color: #01579b;
+      }
 
-  label {
-    font-weight: 600;
-    color: #01579b;
-  }
+      .input-group-text {
+        background-color: #800080;
+        border: none;
+        color: #fff;
+        font-size: 1.2rem;
+        border-top-left-radius: 0.75rem;
+        border-bottom-left-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-  .input-group-text {
-  background-color: #800080; /* ungu tua */
-  border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .form-control,
+      .form-select {
+        border-radius: 0.75rem;
+        border: 2px solid #0277bd;
+        transition: all 0.2s ease-in-out;
+      }
 
+      .form-control:focus,
+      .form-select:focus {
+        border-color: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 188, 212, 0.2);
+      }
 
-  .form-control,
-  .form-select {
-    border-radius: 0.75rem;
-    border: 2px solid #0277bd;
-    transition: all 0.2s ease-in-out;
-  }
+      .btn-success {
+        background-color: #7b0093;
+        color: #fff;
+        border: none;
+        font-weight: 600;
+        border-radius: 2rem;
+        padding: 0.5rem 2rem;
+        transition: background 0.3s ease-in-out;
+        box-shadow: 0 4px 12px rgba(0, 188, 212, 0.2);
+      }
 
-  .form-control:focus,
-  .form-select:focus {
-    border-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 188, 212, 0.2);
-  }
+      .btn-success:hover,
+      .btn-success:focus {
+        background-color: #0097a7;
+        color: #ffffff;
+      }
 
-  .btn-success {
-    background-color: #7b0093;
-    color: #fff;
-    border: none;
-    font-weight: 600;
-    border-radius: 2rem;
-    padding: 0.5rem 2rem;
-    transition: background 0.3s ease-in-out;
-    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.2);
-  }
+      .btn-secondary {
+        border-radius: 2rem;
+        font-weight: 600;
+        margin-left: 0.5rem;
+        background: #ffffff;
+        color: #0277bd;
+        border: 2px solid #7b01ac;
+        transition: background 0.3s ease-in-out, color 0.3s;
+      }
 
-  .btn-success:hover,
-  .btn-success:focus {
-    background-color: #0097a7;
-    color: #ffffff;
-  }
+      .btn-secondary:hover,
+      .btn-secondary:focus {
+        background: #00bcd4;
+        color: #ffffff;
+      }
 
-  .btn-secondary {
-    border-radius: 2rem;
-    font-weight: 600;
-    margin-left: 0.5rem;
-    background: #ffffff;
-    color: #0277bd;
-    border: 2px solid #7b01ac;
-    transition: background 0.3s ease-in-out, color 0.3s;
-  }
+      #preview-gambar {
+        border-radius: 1rem;
+        border: 2px dashed #00bcd4;
+        box-shadow: 0 4px 20px rgba(0, 188, 212, 0.1);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        max-height: 220px;
+        display: none;
+        object-fit: contain;
+        width: 100%;
+      }
 
-  .btn-secondary:hover,
-  .btn-secondary:focus {
-    background: #00bcd4;
-    color: #ffffff;
-  }
-
-  #preview-gambar {
-    border-radius: 1rem;
-    border: 2px dashed #00bcd4;
-    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.1);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    max-height: 220px;
-    display: none;
-    object-fit: contain;
-    width: 100%;
-  }
-
-  .input-group-text i {
-    vertical-align: middle;
-  }
-
-  @media (max-width: 767px) {
-    .tambah-card {
-      padding: 1.5rem 1rem;
-    }
-    h1 {
-      font-size: 1.5rem;
-    }
-  }
-</style>
-
+      @media (max-width: 767px) {
+        .tambah-card {
+          padding: 1.5rem 1rem;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -153,7 +145,9 @@
         <div class="mb-3">
           <label for="judul" class="form-label">Judul Artikel</label>
           <div class="input-group">
-            <span class="input-group-text"><i class="bi bi-type"></i></span>
+            <span class="input-group-text"
+              ><i class="bi bi-type text-white"></i
+            ></span>
             <input
               type="text"
               class="form-control"
@@ -168,7 +162,7 @@
           <label for="konten" class="form-label">Konten</label>
           <div class="input-group">
             <span class="input-group-text"
-              ><i class="bi bi-card-text"></i
+              ><i class="bi bi-card-text text-white"></i
             ></span>
             <textarea
               class="form-control"
@@ -183,7 +177,9 @@
         <div class="mb-3">
           <label for="kategori_id" class="form-label">Kategori</label>
           <div class="input-group">
-            <span class="input-group-text"><i class="bi bi-tags"></i></span>
+            <span class="input-group-text"
+              ><i class="bi bi-tags text-white"></i
+            ></span>
             <select
               class="form-select"
               id="kategori_id"
@@ -197,7 +193,9 @@
         <div class="mb-3">
           <label for="gambar" class="form-label">Gambar Artikel</label>
           <div class="input-group">
-            <span class="input-group-text"><i class="bi bi-image"></i></span>
+            <span class="input-group-text"
+              ><i class="bi bi-image text-white"></i
+            ></span>
             <input
               type="file"
               class="form-control"
@@ -234,7 +232,6 @@
         window.location.href = "index.html";
       }
 
-      // Ambil daftar kategori dari endpoint
       async function loadKategori() {
         try {
           const response = await fetch(
@@ -263,9 +260,8 @@
         }
       }
 
-      loadKategori(); // Panggil saat halaman dimuat
+      loadKategori();
 
-      // Preview gambar sebelum upload
       document
         .getElementById("gambar")
         .addEventListener("change", function (e) {
@@ -289,7 +285,7 @@
           e.preventDefault();
 
           const form = e.target;
-          const formData = new FormData(form); // otomatis ambil semua input (termasuk file)
+          const formData = new FormData(form);
 
           try {
             const response = await fetch(
@@ -304,17 +300,17 @@
             );
 
             const result = await response.json();
-        if (response.ok) {
-          Swal.fire({
-            icon: "success",
-            title: "Artikel berhasil ditambahkan!",
-            showConfirmButton: false,
-            timer: 1800
-          }).then(() => {
-            window.location.href = "dashboard.html";
-          });
-        }
-      else if (response.status === 401) {
+
+            if (response.ok) {
+              Swal.fire({
+                icon: "success",
+                title: "Artikel berhasil ditambahkan!",
+                showConfirmButton: false,
+                timer: 1800,
+              }).then(() => {
+                window.location.href = "dashboard.html";
+              });
+            } else if (response.status === 401) {
               alert(
                 "Token tidak valid atau sudah kedaluwarsa. Silakan login ulang."
               );
@@ -333,7 +329,6 @@
           }
         });
 
-      // Tombol kembali ke dashboard tanpa notif apapun
       document
         .getElementById("btn-kembali")
         .addEventListener("click", function () {
