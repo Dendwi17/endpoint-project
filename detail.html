@@ -83,6 +83,10 @@
         color: #222;
         line-height: 1.7;
         margin-bottom: 1.5rem;
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .btn-back {
@@ -123,7 +127,7 @@
       <div class="artikel-card">
         <h1 class="artikel-title" id="judul-artikel">Memuat judul...</h1>
         <div class="artikel-meta">
-          <span id="tanggal-artikel">Memuat tanggal...</span> &bull;
+          <span id="tanggal-artikel">Memuat tanggal...</span> <br />
           <span id="kategori-artikel">...</span>
         </div>
         <div class="artikel-author" id="penulis-artikel">Penulis: -</div>
@@ -191,8 +195,10 @@
 
           document.getElementById("judul-artikel").textContent =
             artikel.judul || "Tanpa judul";
-          document.getElementById("tanggal-artikel").textContent =
-            artikel.created_at || "-";
+          const tanggal = new Date(artikel.created_at)
+            .toISOString()
+            .slice(0, 10);
+          document.getElementById("tanggal-artikel").textContent = tanggal;
           document.getElementById("kategori-artikel").textContent =
             artikel.nama_kategori ? "Kategori: " + artikel.nama_kategori : "-";
           document.getElementById("penulis-artikel").textContent =
